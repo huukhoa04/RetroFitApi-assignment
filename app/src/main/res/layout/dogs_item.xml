@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    >
+    <data>
+        <variable
+            name="dog"
+            type="com.example.dogapp.model.DogBreed" />
+    </data>
+
+
+
+<androidx.cardview.widget.CardView
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="8dp"
+    android:elevation="8dp"
+    android:layout_marginBottom="6dp"
+    >
+
+    <LinearLayout
+        android:id="@+id/layout_1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="visible"
+        >
+
+        <ImageView
+            android:id="@+id/dog_img"
+            android:layout_width="160dp"
+            android:layout_height="160dp"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            tools:srcCompat="@tools:sample/avatars" />
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="start|end"
+
+            >
+            <ImageButton
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:src="@drawable/heart_solid"
+                android:padding="10dp"
+                app:tint="#FF69B4"
+                android:background="@android:color/transparent"
+                android:scaleType="fitCenter"
+                />
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                >
+                <TextView
+                    android:id="@+id/dog_name"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="14sp"
+                    android:text="@{dog.name}"
+                    android:textStyle="bold"
+                    />
+                <TextView
+                    android:id="@+id/dog_org"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:textSize="12sp"
+                    android:text="@{dog.origin}"
+                    />
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/layout_2"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="6dp"
+        android:layout_marginBottom="10dp"
+        android:visibility="gone"
+        >
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="14sp"
+            android:text="@{dog.name}"
+            android:textStyle="bold"
+            />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textSize="12sp"
+            android:text="@{dog.origin}"
+            />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+</layout>
